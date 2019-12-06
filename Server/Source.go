@@ -49,7 +49,7 @@ func saveProduct(c echo.Context) error {
 	return c.String(http.StatusOK, "OK")
 }
 
-func getUser(c echo.Context) error {
+func getProducts(c echo.Context) error {
 	array := []product{}
 	database, err := sql.Open("mysql", "root:,jhbcjd@/info")
 	if err != nil {
@@ -87,7 +87,7 @@ func main() {
 	}
 
 	e := echo.New()
-	e.GET("/products", getUser)
+	e.GET("/products", getProducts)
 	e.POST("/user", saveUser)
 	e.POST("/addProduct", saveProduct)
 	e.Logger.Fatal(e.Start(":1321"))
