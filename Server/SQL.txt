@@ -1,0 +1,12 @@
+create database market;
+use market;
+create table customer(
+    id int auto_increment primary key,
+    name varchar(30)
+);
+
+create table product(
+    id int auto_increment primary key,
+    price double,
+    title varchar(50)
+)
